@@ -1,8 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import Header from "./Header";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
+import Products from "./Products";
+import Welcome from "./Welcome";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const App = () => {
+  return (
+  <>
+    <Header />
+    <Switch>
+      <Route exact path="/" component={Welcome}></Route>
+      <Route exact path="/products" component={Products}></Route>
+    </Switch>
+  </>
+  );
+};
 
-serviceWorker.unregister();
+ReactDOM.render(
+<BrowserRouter>
+  <Header />
+  <Products />
+</BrowserRouter>,
+document.getElementById("app")
+);
+

@@ -13,7 +13,7 @@ describe("User can see list of products", () => {
       );
     });
   });
-  it("displays secound product", () => {
+  it("displays second product", () => {
     cy.get("#product-2").within(() => {
       cy.get("").should("exist");
       cy.get(".ui.header").should("contain", "Korv");
