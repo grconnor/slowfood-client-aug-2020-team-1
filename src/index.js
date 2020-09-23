@@ -1,9 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Header from "./Header";
-import App from './App';
 import * as serviceWorker from "./serviceWorker";
 import axios from "axios";
+
+const App = () => {
+  return (
+    <div>
+      <Header />
+    </div>
+  )
+}
 
 let apiUrl;
 

@@ -23,7 +23,7 @@ class ProductsList extends Component {
         return <div data-cy={`product-${product.id}`} key={product.id}></div>;
       });
     }
-    return <div>{produgictsList}</div>;
+    return <div>{ProductsList}</div>;
 
     }
 }
