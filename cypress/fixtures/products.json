@@ -1,14 +1,23 @@
-[
-  {
-    "id": 1,
-    "name": "Pizza",
-    "image": "https://images.recept.se/images/recipes/hemlagad-pizza-med-fyra-lackra-fyllningar_7535.jpg?fit=crop&crop=focalpoint&fp-x=0.53261123851092&fp-y=0.6202283679359&fp-z=1.3165806968847&w=800&h=570&auto=format",
-    "description": "Pizza with mozzarella"
-  },
-  {
-    "id": 2,
-    "name": "Korv",
-    "image": "https://img.koket.se/standard-large/felix-lyxig-korv-och-brod-med-rostad-lok-picklad-lok-och-senapsmajonnas.jpg",
-    "description": "Korv med bröd"
-  }
-]
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Pizza",
+      "price": 100,
+      "description": "Pizza with mozzarella"
+    },
+    {
+      "id": 2,
+      "name": "Falafel",
+      "price": 50,
+      "description": "Vegeterian"
+    },
+
+    {
+      "id": 3,
+      "name": "Korv",
+      "price": 100,
+      "description": "Vegeterian"
+    }
+  ]
+}
