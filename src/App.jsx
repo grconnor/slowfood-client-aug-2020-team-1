@@ -1,11 +1,11 @@
 import React from 'react';
+import ProductsList from './ProductsList'
 
 const App = () => {
   return (
     <>
-      <section data-cy='header'>
-        <h1>Products list</h1>
-      </section>
+      <h1 data-cy="header">Products list</h1>
+      <ProductsList/>
     </>
   );
 }

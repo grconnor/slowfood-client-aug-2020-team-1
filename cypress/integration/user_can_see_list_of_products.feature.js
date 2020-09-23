@@ -9,7 +9,7 @@ describe("Display list of products", () => {
   });
 
   it('when user visit the page', () => {
-    cy.get('[data-cy="header"]').should('contain', 'Products List')
+    cy.get('[data-cy="header"]').should('contain', 'Products list')
   });
 
   it('user can see a list of 2 products', () => {

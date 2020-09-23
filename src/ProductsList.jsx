@@ -12,11 +12,20 @@ class ProductsList extends Component {
 
   async fetchProductData() {
     let productData = await axios.get("/products");
+    
+    this.setState({ products: productData.data.products });
   }
 
   render() {
-    return <div></div>;
-  }
+    let productsList;
+    if (this.state.products !== []) {
+      productsList = this.state.products.map((product) => {
+        return <div data-cy={`product-${product.id}`} key={product.id}></div>;
+      });
+    }
+    return <div>{produgictsList}</div>;
+
+    }
 }
 
 export default ProductsList;
