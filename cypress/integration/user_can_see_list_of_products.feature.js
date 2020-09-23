@@ -1,23 +1,17 @@
-describe("User can see list of products", () => {
+describe("Display list of products", () => {
   beforeEach(() => {
     cy.visit("http://localhost:3001");
-    cy.get("#menu-tab").click();
   });
-  it("displays first product", () => {
-    cy.get("#product-1").within(() => {
-      cy.get("").should("exist");
-      cy.get(".ui.header").should("contain", "Pizza");
-      cy.get(".description").should(
-        "contain",
-        "Pizza"
-      );
-    });
+
+  it('when user visit the page', () => {
+    cy.visit("http://localhost:3001")
+    cy.get('[data-cy="header"]').should('contain', 'Products List')
   });
-  it("displays second product", () => {
-    cy.get("#product-2").within(() => {
-      cy.get("").should("exist");
-      cy.get(".ui.header").should("contain", "Korv");
-      cy.get(".description").should("contain", "Korv");
-    });
+
+  it('user can see a list of 2 products', () => {
+    cy.get('[data-cy="main-container"]').within(() => {
+      cy.get('[data-cy="list"]').should('have.length', 2)
+    })
   });
 })
+

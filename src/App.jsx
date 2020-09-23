@@ -1,10 +1,11 @@
 import React from 'react';
 
-
 const App = () => {
   return (
     <>
-      <h1>Slowfood</h1>
+      <section data-cy='header'>
+        <h1>Products list</h1>
+      </section>
     </>
   );
 }
