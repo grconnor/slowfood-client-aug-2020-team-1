@@ -32,6 +32,10 @@ class Menu extends Component {
               <div data-id={item.id} data-cy={"product-" + item.id} id={"product-" + item.id}>
                 <p>{item.name}</p>
                 <p>{item.price}</p>
+                { authenticted && <button onClick={this.addToOrder}>Add to order</button>}
+                { item.id == parseInt(this.state.orderDetails.id) && (
+                  <p id="message">{this.state.orderDetails.message}</p>
+                )}
               </div>
             </>
           );
