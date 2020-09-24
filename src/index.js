@@ -1,16 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Header from "./Header";
 import * as serviceWorker from "./serviceWorker";
 import axios from "axios";
+import App from "./App"
 
-const App = () => {
-  return (
-    <div>
-      <Header />
-    </div>
-  )
-}
 
 let apiUrl;
 
@@ -26,3 +19,4 @@ axios.defaults.baseURL = apiUrl;
 
 ReactDOM.render(<App />,  document.getElementById("root")
 );
+serviceWorker.unregister();

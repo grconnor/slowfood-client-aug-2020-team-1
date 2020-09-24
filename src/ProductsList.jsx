@@ -19,13 +19,20 @@ class ProductsList extends Component {
   render() {
     let productsList;
     if (this.state.products !== []) {
+    
+    
       productsList = this.state.products.map((product) => {
-        return <div data-cy={`product-${product.id}`} key={product.id}></div>;
+        return <div data-cy={"product-" + product.id} key={product.id}></div>
       });
-    }
-    return <div>{ProductsList}</div>;
+    
+    
+    
+  }
+  
+    return <div>{productsList}</div>;
 
     }
 }
+
 
 export default ProductsList;
