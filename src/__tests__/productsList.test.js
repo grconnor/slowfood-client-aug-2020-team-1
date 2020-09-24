@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import ProductList from '../ProductsList'
+import ProductList from '../components/ProductsList'
 import axios from 'axios'
 
 describe('<ProductList/>', () => {

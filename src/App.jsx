@@ -1,16 +1,14 @@
-import React from 'react';
-import ProductsList from './ProductsList';
-import Header from './Header'
+import React from "react";
+import ProductsList from "./components/ProductsList";
+import NavBar from './components/NavBar'
 
 const App = () => {
   return (
     <>
-      <Header/>
-      <h1 data-cy="header">Products list</h1>
-      <ProductsList/>
-      
+      <NavBar />
+      <ProductsList />
     </>
   );
-}
+};
 
 export default App;
