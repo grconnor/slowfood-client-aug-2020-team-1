@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { getProducts } from '../modules/products'
-import { createOrder } from '../modules/orders'
+import { createOrder, updateOrder } from '../modules/orders'
 
 
 class Menu extends Component {
   state = {
     menu: [],
-    orderDetails: {}
+    orderResponse: {}
   }
 
   componentDidMount = async () => {
@@ -16,8 +16,17 @@ class Menu extends Component {
 
   addToOrder = async (event) => {
     let productId = event.target.parentElement.dataset.id
-    let result = await createOrder(productId)
-    this.setState({ orderDetails: { id: productId, message: result.message } })
+    let result;
+    if (this.state.orderId) {
+      result = await updateOrder(productId, this.state.orderId)
+    } else {
+      result = await createOrder(productId)
+    }
+
+    this.setState({ 
+      orderResponse: { id: productId, message: result.message },
+      orderId: result.order_id
+    })
   }
 
   render() {
@@ -33,8 +42,8 @@ class Menu extends Component {
                 <p>{item.name}</p>
                 <p>{item.price}</p>
                 { authenticted && <button onClick={this.addToOrder}>Add to order</button>}
-                { item.id == parseInt(this.state.orderDetails.id) && (
-                  <p id="message">{this.state.orderDetails.message}</p>
+                { item.id == parseInt(this.state.orderResponse.id) && (
+                  <p id="message">{this.state.orderResponse.message}</p>
                 )}
               </div>
             </>
