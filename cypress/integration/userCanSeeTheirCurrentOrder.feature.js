@@ -52,9 +52,10 @@ describe('User can see their current order', () => {
     });
 
     cy.get("button").contains("View Order").click()
+
     cy.get("[data-cy=order-details]").within(() => {
       cy.get("[data-cy=order-total]").should("contain", "Total: 55")
-      cy.get("li").contains(" 1x Pizza")
+      cy.get("li").contains("1x Pizza")
     })
 
     cy.get("[data-cy=product-2]").within(() => {
@@ -69,7 +70,7 @@ describe('User can see their current order', () => {
     cy.route({
       method: "PUT",
       url: "http://localhost:3000/api/v1/orders/11",
-      response: "fixture:successfull_second_order_update.json",
+      response: "fixture:successfull_order_second_update.json",
       headers: {
         uid: "user@mail.com",
       }
