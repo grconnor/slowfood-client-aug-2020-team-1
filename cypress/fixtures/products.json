@@ -1,0 +1,23 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Pizza",
+      "price": 100,
+      "description": "Pizza with mozzarella"
+    },
+    {
+      "id": 2,
+      "name": "Falafel",
+      "price": 50,
+      "description": "Vegeterian"
+    },
+
+    {
+      "id": 3,
+      "name": "Korv",
+      "price": 100,
+      "description": "Vegeterian"
+    }
+  ]
+}
