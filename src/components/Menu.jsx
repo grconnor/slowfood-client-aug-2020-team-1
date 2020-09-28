@@ -6,7 +6,9 @@ import { createOrder, updateOrder } from '../modules/orders'
 class Menu extends Component {
   state = {
     menu: [],
-    orderResponse: {}
+    orderResponse: {},
+    showOrder: false,
+    currentOrder: {}
   }
 
   componentDidMount = async () => {
@@ -17,24 +19,47 @@ class Menu extends Component {
   addToOrder = async (event) => {
     let productId = event.target.parentElement.dataset.id
     let result;
-    if (this.state.orderId) {
-      result = await updateOrder(productId, this.state.orderId)
+    if (this.state.currentOrder.id) {
+      result = await updateOrder(productId, this.state.currentOrder.id)
     } else {
       result = await createOrder(productId)
     }
 
     this.setState({ 
       orderResponse: { id: productId, message: result.message },
-      orderId: result.order_id
+      currentOrder: result.order
     })
   }
 
   render() {
     const menu = this.state.menu;
     const authenticted = this.props.authenticted;
+    const order = this.state.currentOrder
+
+    let currentOrder
+    let viewOrder
+
+    if (this.state.currentOrder.id) {
+      viewOrder = <button onClick={() => this.setState({showOrder: true})}>View Order</button>
+    }
+
+    if (this.state.showOrder) {
+      currentOrder = (
+        <div data-cy="order-details">
+          <p data-cy="order-total">Total: {order.total}</p>
+          <ui>
+          {order.products.map(product => {
+            return <li>{product.amount}x {product.name}</li>
+          })}
+          </ui>
+        </div>
+      )
+    }
 
     return (
       <>
+        {viewOrder}
+        {currentOrder}
         { menu.length > 0 && menu.map(item => {
           return (
             <>

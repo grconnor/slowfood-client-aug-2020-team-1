@@ -1,0 +1,14 @@
+{
+  "message": "Item has been added to your order",
+  "order": {
+    "id": 11,
+    "total": 55,
+    "products": [
+      {
+        "amount": 1,
+        "name": "Pizza",
+        "total": 55
+      }
+    ]
+  }
+}
