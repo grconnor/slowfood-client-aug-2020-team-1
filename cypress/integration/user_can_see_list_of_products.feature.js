@@ -24,4 +24,3 @@ describe("Display list of products", () => {
     });
   });
 })
-
