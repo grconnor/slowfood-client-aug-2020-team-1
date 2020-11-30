@@ -1,8 +1,8 @@
-import axios from "axios";
+import axios from 'axios'
 
-const fetchProductData = async () => {
-  let productData = await axios.get("/products");
-  return productData.data.products;
+const getProducts = async () => {
+  const response = await axios.get("/products");
+  return response.data.products;
 };
 
-export { fetchProductData };
+export { getProducts };
